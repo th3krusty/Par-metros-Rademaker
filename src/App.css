@@ -619,3 +619,68 @@ button { font-family: inherit; cursor: pointer; }
   font-size: 0.9rem;
 }
 .copy-params-run:disabled { opacity: 0.6; }
+
+/* ---------- Manípulo Rademaker ---------- */
+.manipulos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+.manipulo-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.manipulo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.manipulo-svg { width: 100%; height: 100%; display: block; }
+.manipulo-value,
+.manipulo-input {
+  position: absolute;
+  top: 44%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #1c1c1a;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+.manipulo-input {
+  width: 52%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #b9b9b2;
+  padding: 0 0 2px;
+  outline: none;
+}
+.manipulo-input:focus { border-bottom-color: var(--amber-dark); }
+.manipulo-input::-webkit-outer-spin-button,
+.manipulo-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.manipulo-input { -moz-appearance: textfield; }
+
+.manipulo-brand {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.5rem;
+  font-weight: 600;
+  color: #4a4a46;
+  letter-spacing: 0.02em;
+  pointer-events: none;
+}
+.manipulo-label {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  text-align: center;
+  max-width: 110px;
+  line-height: 1.25;
+}
