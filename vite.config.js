@@ -8,5 +8,5 @@ import { defineConfig } from 'vite'
 // de um domínio próprio.
 export default defineConfig({
   plugins: [react()],
-  base: '/painel-parametros/',
+  base: '/',
 })
