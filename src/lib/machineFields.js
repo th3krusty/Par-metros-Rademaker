@@ -38,7 +38,7 @@ export async function addMachineField(machineId, field) {
   const nextOrder = existing?.length ? existing[0].order_index + 1 : 0;
 
   let options = null;
-  if (field.type === "lever_group") {
+  if (field.type === "lever_group" || field.type === "manipulo") {
     options = { count: Number(field.count) || 1 };
   } else if ((field.type === "toggle" || field.type === "radio") && field.optionsText) {
     options = field.optionsText.split(",").map((s) => s.trim()).filter(Boolean);
