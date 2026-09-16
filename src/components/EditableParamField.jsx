@@ -1,4 +1,5 @@
 import { FIELD_TYPES } from "../data/schema";
+import ManipuloDial from "./ManipuloDial";
 
 // Campo de parâmetro editável (tela de admin). Chama onChange(newValue)
 // a cada edição; quem chama decide quando persistir (ao sair do campo).
@@ -10,7 +11,28 @@ export default function EditableParamField({ field, value, onChange, onBlur, sav
         {field.description && <span className="admin-hint" title={field.description}>ⓘ</span>}
       </div>
 
-      {field.type === FIELD_TYPES.LEVER_GROUP ? (
+      {field.type === FIELD_TYPES.MANIPULO ? (
+        <div className="manipulos-grid">
+          {Array.from({ length: field.count ?? 1 }).map((_, i) => (
+            <ManipuloDial
+              key={i}
+              editable
+              label={field.count > 1 ? `${i + 1}` : null}
+              value={Array.isArray(value) ? value[i] : field.count > 1 ? "" : value}
+              onChange={(v) => {
+                if ((field.count ?? 1) > 1) {
+                  const next = Array.isArray(value) ? [...value] : Array(field.count).fill("");
+                  next[i] = v;
+                  onChange(next);
+                } else {
+                  onChange(v);
+                }
+              }}
+              onBlur={() => onBlur?.()}
+            />
+          ))}
+        </div>
+      ) : field.type === FIELD_TYPES.LEVER_GROUP ? (
         <div className="lever-values lever-values--editable">
           {Array.from({ length: field.count }).map((_, i) => (
             <div className="lever-value" key={i}>

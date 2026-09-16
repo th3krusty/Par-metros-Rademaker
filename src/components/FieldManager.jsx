@@ -6,6 +6,7 @@ const TYPE_LABELS = {
   toggle: "Duas opções (toggle)",
   radio: "Várias opções (lista)",
   lever_group: "Grupo de alavancas",
+  manipulo: "Manípulo Rademaker",
 };
 
 export default function FieldManager({ machineId, fields, onChanged }) {
@@ -93,6 +94,7 @@ export default function FieldManager({ machineId, fields, onChanged }) {
                 <option value="toggle">Duas opções (toggle)</option>
                 <option value="radio">Várias opções (lista)</option>
                 <option value="lever_group">Grupo de alavancas</option>
+                <option value="manipulo">Manípulo Rademaker (volante)</option>
               </select>
             </label>
 
@@ -120,9 +122,9 @@ export default function FieldManager({ machineId, fields, onChanged }) {
               </label>
             )}
 
-            {form.type === "lever_group" && (
+            {(form.type === "lever_group" || form.type === "manipulo") && (
               <label>
-                Quantidade de alavancas
+                {form.type === "manipulo" ? "Quantidade de manípulos" : "Quantidade de alavancas"}
                 <input
                   type="number"
                   min="1"
