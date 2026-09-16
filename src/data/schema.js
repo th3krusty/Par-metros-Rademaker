@@ -67,35 +67,34 @@ export const MACHINES = {
     { id: "laminacao_premassa1", label: "Máquina de laminação pré-massa 1" },
     {
       id: "lss1",
-      label: "LSS",
+      label: "LSS 1",
       description:
         "Laminadora de baixa tensão (LSS) — reduz a espessura da massa entre rolos superiores e inferiores, controlando a folga entre eles.",
     },
-    { id: "reducao_rapida1", label: "Multirolo 1" },
-    { id: "camadas1", label: "Bico de Pato" },
+    { id: "reducao_rapida1", label: "Redução rápida 1" },
+    { id: "camadas1", label: "Equipamento de fazer camadas 1" },
   ],
   linha2: [
-    { id: "reducao_rapida1_l2", label: "Multirolo 2" },
-    { id: "rolos_medicao1", label: "Encoder" },
-    { id: "faca_rotativa", label: "Faca Rotativa" },
-    { id: "retorno_massa1", label: "Retorno de massa" },
+    { id: "reducao_rapida1_l2", label: "Redução rápida 1" },
+    { id: "rolos_medicao1", label: "Rolos de medição 1" },
+    { id: "retorno_massa1", label: "Retorno de massa 1" },
   ],
   linha3: [
-    { id: "espalhar_conveyor1", label: "Tiras" },
-    { id: "trabalho_guilhotina2", label: "Trabalho guilhotina" },
-    { id: "guilhotina_mecanica1", label: "Guilhotina" },
+    { id: "espalhar_conveyor1", label: "Espalhar conveyor 1" },
+    { id: "trabalho_guilhotina2", label: "Trabalho guilhotina 2" },
+    { id: "guilhotina_mecanica1", label: "Guilhotina mecânica 1" },
     {
       id: "enroladora_r2013",
-      label: "Modeladora",
+      label: "Enroladora R-2013: 1",
       manualRef: "Manual Rademaker, seção 9.22 — \"Moldadora em R\" (nome diferente na IHM)",
       description:
         "Enrola as porções de massa usando dois tapetes que giram em direções opostas. A diferença de velocidade entre os tapetes faz o enrolamento. As alavancas são os manípulos físicos da máquina que ajustam a firmeza do rolo, a altura de queda e a posição do produto na saída — os valores de referência ficam salvos por receita.",
     },
-    { id: "esteira3", label: "Esteira pós Modeladora" },
     { id: "rolo_pressao1", label: "Rolo de pressão 1" },
-    { id: "esteira4", label: "Esteira Curva" },
+    { id: "esteira6", label: "Esteira de Transporte 6" },
     { id: "esteira5", label: "Esteira de Transporte 5" },
-    { id: "esteira6", label: "Esteira Antes do giro" },
+    { id: "esteira4", label: "Esteira de Transporte 4" },
+    { id: "esteira3", label: "Esteira de Transporte 3" },
   ],
 };
 
@@ -104,4 +103,5 @@ export const FIELD_TYPES = {
   TOGGLE: "toggle",
   RADIO: "radio",
   LEVER_GROUP: "lever_group",
+  MANIPULO: "manipulo", // volante de ajuste manual Rademaker (visual de disco)
 };
