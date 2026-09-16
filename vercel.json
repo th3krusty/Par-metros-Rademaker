@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/painel-parametros/(.*)", "destination": "/index.html" }
+  ]
+}
